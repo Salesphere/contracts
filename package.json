@@ -1,0 +1,22 @@
+{
+	"name": "token-deployer",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start": "node deploy/script.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"hardhat": "^2.22.8"
+	},
+	"dependencies": {
+		"@thirdweb-dev/contracts": "^3.15.0",
+		"aes-js": "^4.0.0-beta.5",
+		"dotenv": "^16.4.5",
+		"ethers": "^6.13.2"
+	}
+}
