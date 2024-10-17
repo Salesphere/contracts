@@ -1,18 +1,18 @@
-import { ContractFactory, Wallet, JsonRpcProvider } from "ethers";
-import { config } from "dotenv";
-config();
+const { ContractFactory, Wallet, JsonRpcProvider } = require("ethers");
+require("dotenv").config();
+const { RPC_URL } = require("../constants");
 
-import contractData from "../artifacts/contracts/MyToken.sol/TokenFactory.json" assert { type: "json" };
+const {
+	abi,
+	bytecode,
+} = require("../artifacts/contracts/TokenFactory.sol/TokenFactory.json");
 
-const provider = new JsonRpcProvider(process.env.RPC_URL);
+const provider = new JsonRpcProvider(RPC_URL);
 const wallet = new Wallet(process.env.PRIVATE_KEY, provider);
 
 const deplyTokenFactory = async () => {
-	const factory = new ContractFactory(
-		contractData.abi,
-		contractData.bytecode,
-		wallet
-	);
+	console.log("Deploying TokenFactory contract to ", provider?._network?.name);
+	const factory = new ContractFactory(abi, bytecode, wallet);
 	const contract = await factory.deploy();
 	await contract.waitForDeployment();
 

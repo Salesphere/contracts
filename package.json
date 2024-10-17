@@ -1,9 +1,8 @@
 {
-	"name": "token-deployer",
+	"name": "salesphere-contract",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"type": "module",
 	"scripts": {
 		"deploy:airdrop": " node deploy/airdrop",
 		"deploy:tokenFactory": " node deploy/tokenFactory"
@@ -12,6 +11,7 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"@nomicfoundation/hardhat-verify": "^2.0.11",
 		"hardhat": "^2.22.8"
 	},
 	"dependencies": {

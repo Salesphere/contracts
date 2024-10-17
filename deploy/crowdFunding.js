@@ -5,14 +5,13 @@ const { RPC_URL } = require("../constants");
 const {
 	abi,
 	bytecode,
-} = require("../artifacts/contracts/Airdrop.sol/MultiUserAirdropWithPercentageFee.json");
+} = require("../artifacts/contracts/CrowdFunding.sol/CrowdFunding.json");
 
 const provider = new JsonRpcProvider(RPC_URL);
 const wallet = new Wallet(process.env.PRIVATE_KEY, provider);
 
-const deployAirdrop = async () => {
-	console.log("Deploying Airdrop contract to ", provider._network.name);
-
+const deployCrowdFunding = async () => {
+	console.log("Deploying Crowdfunding contract to ", provider?._network?.name);
 	const factory = new ContractFactory(abi, bytecode, wallet);
 	const contract = await factory.deploy();
 	await contract.waitForDeployment();
@@ -20,4 +19,4 @@ const deployAirdrop = async () => {
 	console.log("contract deployed to ", await contract.getAddress());
 };
 
-deployAirdrop();
+deployCrowdFunding();
