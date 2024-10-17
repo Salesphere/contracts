@@ -11,7 +11,7 @@ const provider = new JsonRpcProvider(RPC_URL);
 const wallet = new Wallet(process.env.PRIVATE_KEY, provider);
 
 const deployAirdrop = async () => {
-	console.log("Deploying Airdrop contract to ", provider._network.name);
+	console.log("Deploying Airdrop contract");
 
 	const factory = new ContractFactory(abi, bytecode, wallet);
 	const contract = await factory.deploy();

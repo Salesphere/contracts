@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"deploy:airdrop": " node deploy/airdrop",
-		"deploy:tokenFactory": " node deploy/tokenFactory"
+		"deploy:tokenFactory": " node deploy/tokenFactory",
+		"deploy:crowdFunding": " node deploy/crowdFunding"
 	},
 	"keywords": [],
 	"author": "",
